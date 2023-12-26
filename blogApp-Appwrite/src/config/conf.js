@@ -6,7 +6,7 @@ const conf = {
 
     appwriteDatabaseId: String(import.meta.env.VITE_DATABASE_ID),
 
-    appwrieBucketId: String(import.meta.env.VITE_BUCKET = ID)
+    appwriteBucketId: String(import.meta.env.VITE_BUCKET_ID)
 
 }
 

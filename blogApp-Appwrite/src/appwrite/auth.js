@@ -19,7 +19,7 @@ class AuthService {
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId)
 
-        this.account(this.client)
+        this.account = new Account(this.client)
     }
 
 
