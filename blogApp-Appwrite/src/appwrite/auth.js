@@ -1,8 +1,8 @@
-import config from "../config/config";
+import conf from "../config/conf";
 import { Client, Account, ID } from "appwrite";
 
 /*
-This file can be shared among other projects too.
+This file can be shared among other appwrite projects too.
 Workflow : 
     make clas AuthService and export its object 
     make obj of Client
@@ -16,8 +16,8 @@ class AuthService {
 
     constructor() {
         this.client
-            .setEndpoint(config.appwriteUrl)
-            .setProject(config.appwriteProjectId)
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectId)
 
         this.account(this.client)
     }
@@ -64,6 +64,7 @@ class AuthService {
 
     async logout() {
         try {
+            // deletes all the active sessions 
             await this.account.deleteSessions()
         } catch (error) {
             console.log("Appwrite service :: logout :: error", error)
